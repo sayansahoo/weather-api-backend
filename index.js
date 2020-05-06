@@ -5,9 +5,8 @@ const axios = require('axios');
 const { v4: uuidv4 } = require("uuid");
 const token = uuidv4();
 app.use(cors());
-const GOOGLE_API_KEY = 'AIzaSyDKa1YpYaVJoFSouhg23eGpHHzYaaFR_kg';
+const GOOGLE_API_KEY = '';
 app.get("/", async (req, res) => {
-    console.log(req, 'req')
     let {data} = await axios.get(
       `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${req.query.place}&key=${GOOGLE_API_KEY}&sessiontoken=${token}`
     );
