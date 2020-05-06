@@ -5,7 +5,7 @@ const axios = require('axios');
 const { v4: uuidv4 } = require("uuid");
 const token = uuidv4();
 app.use(cors());
-const GOOGLE_API_KEY = 'AIzaSyBWTjvqY0SEpqERzczBI_7WHFuStg3qRQk';
+const GOOGLE_API_KEY = 'AIzaSyDKa1YpYaVJoFSouhg23eGpHHzYaaFR_kg';
 app.get("/", async (req, res) => {
     console.log(req, 'req')
     let {data} = await axios.get(
