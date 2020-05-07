@@ -10,7 +10,13 @@ app.get("/", async (req, res) => {
     let {data} = await axios.get(
       `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${req.query.place}&key=${GOOGLE_API_KEY}&sessiontoken=${token}`
     );
-     console.log(data, 'data')
+    res.json(data);
+  });
+
+  app.get("/geocode", async (req, res) => {
+    let {data} = await axios.get(
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${req.query.place}&key=${GOOGLE_API_KEY}`
+    );
     res.json(data);
   });
 
